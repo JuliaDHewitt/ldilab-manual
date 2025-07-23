@@ -216,6 +216,7 @@ The resolutions specified here are only suitable for Windows systems like CCSS-C
 First, confirm whether azulJava files are present in the locations specified in the examples below. They won't be on all systems. If you find the files then, at the beginning of the R script, place the following:
 
 ```
+
 Sys.setenv(JAVA_HOME='L:\\common\\azulJava\\jdk\\jre')
 install.packages("rJava")
 library(rJava)
@@ -228,3 +229,20 @@ Sys.setenv(JAVA_HOME = "L:/common/azulJava/jdk")
 install.packages("rJava")
 library(rJava)
 ```
+
+## Issue with R Packages After Using renv.lock: project is out-of-sync 
+
+You’ve installed the R environment successfully and tried to run the code, but the code crashes due to a missing package. You might get an error message such as ‘The project is out-of-sync’. It’s possible the authors didn’t list all the R packages in their renv.lock. However, you can’t edit an renv.lock file the way you can edit a requirements.txt or a config script, so you’ll need another way of updating it. 
+
+Open R in the terminal and run 
+```
+renv::status() 
+```
+This will check if packages are called during the replication which are not installed.
+Next run
+```
+renv::snapshot()
+```
+and select option 2 to update the lock file.
+Sometimes, it will come across a package it doesn’t recognize. This might be because it’s a package from github or somewhere other than cran. You may need to install the package separately then rerun renv::snapshot().
+
