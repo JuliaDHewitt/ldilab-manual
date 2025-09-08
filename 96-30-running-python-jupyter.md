@@ -25,7 +25,7 @@ should work.
 
 You should create a Python environment that is dedicated to the project. See [Anaconda instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) as one possible method, [venv](https://docs.python.org/3/library/venv.html) as another one, though others exist.
 
-### Native Python `venv`
+### Native Python `venv` suggested for macOS / Linux 
 
 
 Here's `venv` version in a nutshell ([full guide](https://packaging.python.org/en/latest/guides/installing-using-pip-and-virtual-environments/#creating-a-virtual-environment)). Open up a shell.
