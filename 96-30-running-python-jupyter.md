@@ -25,6 +25,51 @@ should work.
 
 You should create a Python environment that is dedicated to the project. See [Anaconda instructions](https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#creating-an-environment-with-commands) as one possible method, [venv](https://docs.python.org/3/library/venv.html) as another one, though others exist.
 
+### Anaconda method
+
+::::{admonition} On Windows, use `Anaconda Powershell Prompt` or `Anaconda Prompt`
+:class: dropdown
+
+![Windows Anaconda Prompt](images/ccss-anaconda-shell.png)
+:::: 
+
+::::{admonition} On BioHPC
+:class: dropdown
+
+Follow instructions [at BioHPC](https://biohpc.cornell.edu/lab/userguide.aspx?a=software&i=574#c) on how to install `miniconda` in your home directory, then add the line
+
+```bash
+source $HOME/miniconda3/bin/activate
+```
+
+at an appropriate location in the code (for instance, replacing `module load conda` in the SLURM batch file), or interactively.
+
+::::
+
+
+In Anaconda Power Shell, run
+
+```bash
+conda create -n (your_env_name) 
+```
+
+where ideally, `(your_env_name)` is the name of the JIRA issue, in **lower case** (e.g., `aearep-123`).
+
+Then, activate the environment:
+
+```bash
+conda activate (your_env_name)
+```
+
+To deactivate, run
+
+```bash
+conda deactivate
+```
+
+
+
+
 ### Native Python `venv`
 
 
@@ -63,51 +108,6 @@ To deactivate:
 ```
 deactivate
 ```
-
-### Anaconda method
-
-::::{admonition} On Windows, use `Anaconda Powershell Prompt` or `Anaconda Prompt`
-:class: dropdown
-
-![Windows Anaconda Prompt](images/ccss-anaconda-shell.png)
-:::: 
-
-::::{admonition} On BioHPC
-:class: dropdown
-
-Follow instructions [at BioHPC](https://biohpc.cornell.edu/lab/userguide.aspx?a=software&i=574#c) on how to install `miniconda` in your home directory, then add the line
-
-```bash
-source $HOME/miniconda3/bin/activate
-```
-
-at an appropriate location in the code (for instance, replacing `module load conda` in the SLURM batch file), or interactively.
-
-::::
-
-
-In the shell of your choice, run
-
-```bash
-conda create -n (your_env_name) 
-```
-
-where ideally, `(your_env_name)` is the name of the JIRA issue, in **lower case** (e.g., `aearep-123`).
-
-Then, activate the environment:
-
-```bash
-conda activate (your_env_name)
-```
-
-To deactivate, run
-
-```bash
-conda deactivate
-```
-
-
-
 
 
 ## Making Python code dynamic
