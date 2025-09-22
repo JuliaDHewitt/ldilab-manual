@@ -3,6 +3,8 @@
 
 In this section, we will show you a few things related specifically to running code reproducibly with Python and Jupyter notebooks. . For more general debugging tips for Python and other computer languages, see [our wiki](https://github.com/labordynamicsinstitute/replicability-training/wiki/Python-Tips).
 
+Note that if the authors don't use a master file in Python, we don't create one unless it's needed to run the replication package.
+
 ## Python package installation
 
 Most systems will have the standard Python package installer `pip` already installed, so you should be able to use it.
